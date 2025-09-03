@@ -1,0 +1,15 @@
+# Usar imagen base de Java
+FROM openjdk:21-bookworm
+ 
+# Directorio de trabajo
+WORKDIR /app
+ 
+# Copiar el JAR al contenedor
+COPY target/demoApp3-0.0.1-SNAPSHOT.jar app.jar
+ 
+# Exponer puerto
+EXPOSE 8087
+ 
+# Comando de ejecución
+ENTRYPOINT ["java", "-jar", "app.jar"]
+ 
